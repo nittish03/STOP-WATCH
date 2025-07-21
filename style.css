@@ -1,54 +1,122 @@
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f4f4f4;
-        }
-        .stopwatch {
-            background: #fff;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            text-align: center;
-        }
-        .time {
-            font-size: 2rem;
-            margin-bottom: 20px;
-        }
-        .buttons button {
-            padding: 10px 20px;
-            margin: 5px;
-            font-size: 1rem;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .buttons button.start {
-            background-color: #28a745;
-            color: white;
-        }
-        .buttons button.pause {
-            background-color: #ffc107;
-            color: white;
-        }
-        .buttons button.reset {
-            background-color: #dc3545;
-            color: white;
-        }
-        .laps {
-            margin-top: 20px;
-            text-align: left;
-        }
-        .laps ul {
-            padding: 0;
-            list-style: none;
-        }
-        .laps li {
-            background: #f8f9fa;
-            margin: 5px 0;
-            padding: 10px;
-            border-radius: 5px;
-        }
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&display=swap');
+
+body {
+  background: linear-gradient(135deg, #dbeafe 0%, #fff 75%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Space Grotesk', 'Segoe UI', Arial, sans-serif;
+}
+
+.stopwatch {
+  background: rgba(255,255,255,0.80);
+  border-radius: 25px;
+  box-shadow: 0 8px 32px #1566c222, 0 1.5px 7px #bae6fd42;
+  padding: 2.3rem 2.4rem 2.1rem 2.4rem;
+  min-width: 330px;
+  text-align: center;
+  backdrop-filter: blur(7px);
+  transition: box-shadow 0.21s;
+}
+
+.time {
+  font-size: 2.8rem;
+  letter-spacing: 0.11em;
+  margin-bottom: 2rem;
+  color: #0369a1;
+  font-weight: 700;
+  background: linear-gradient(90deg, #60a5fa 0%, #5eead4 85%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+  margin-bottom: 1.8rem;
+}
+
+.buttons button {
+  padding: 14px 28px;
+  font-size: 1.09rem;
+  font-family: inherit;
+  font-weight: 700;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px #bae6fd33;
+  cursor: pointer;
+  letter-spacing: 1px;
+  transition: background 0.18s, color 0.16s, transform 0.11s;
+  outline: none;
+}
+
+.buttons .start {
+  background: linear-gradient(90deg, #34d399 70%, #16a34a 100%);
+  color: #fff;
+}
+.buttons .start:hover { background: linear-gradient(90deg, #16a34a 40%, #34d399 100%); }
+
+.buttons .pause {
+  background: linear-gradient(90deg, #fbbf24 35%, #fde68a 100%);
+  color: #22223b;
+}
+.buttons .pause:hover { background: linear-gradient(90deg, #fde68a 50%, #fbbf24 100%); color: #b45309;}
+
+.buttons .reset {
+  background: linear-gradient(90deg, #f43f5e 65%, #fca5a5 100%);
+  color: #fff;
+}
+.buttons .reset:hover { background: linear-gradient(90deg, #fca5a5 35%, #f43f5e 100%); }
+
+.buttons .lap {
+  background: linear-gradient(90deg, #0ea5e9 60%, #818cf8 100%);
+  color: #fff;
+}
+.buttons .lap:hover { background: linear-gradient(90deg, #818cf8 50%, #0ea5e9 100%); }
+
+.laps {
+  margin-top: .4rem;
+  text-align: left;
+}
+
+.laps h3 {
+  font-size: 1.09rem;
+  font-weight: bold;
+  margin-left: 5px;
+  color: #0369a1;
+  margin-bottom: 0.65rem;
+  letter-spacing: 1px;
+}
+
+.laps ul {
+  padding: 0;
+  list-style: none;
+  margin: 0;
+}
+
+.laps li {
+  background: linear-gradient(90deg, #fdf2f8 0%, #dbeafe 100%);
+  color: #4f46e5;
+  margin: 8px 0;
+  padding: 11px 18px;
+  border-radius: 8px;
+  font-size: 1.03rem;
+  font-weight: bold;
+  box-shadow: 0 1.5px 12px #60a5fa1a;
+  border-left: 5px solid #5eead4;
+  border-bottom: 2.5px solid #fff6;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 500px){
+  .stopwatch { min-width: 99vw; padding: 1.1rem 1vw;}
+  .time { font-size: 2rem;}
+  .buttons button { padding: 10px 13px; font-size: .95rem;}
+}
+
+::-webkit-scrollbar { width: 4px; background: #f4f4f4;}
+::-webkit-scrollbar-thumb { background: #bde0fe; border-radius: 8px;}
+::-webkit-scrollbar-track { background: #f4f4f4;}
